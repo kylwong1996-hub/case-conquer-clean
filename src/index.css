@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import '@fontsource/dm-sans/400.css';
+@import '@fontsource/dm-sans/500.css';
+@import '@fontsource/dm-sans/600.css';
+@import '@fontsource/dm-sans/700.css';
+
+@layer base {
+  :root {
+    --background: 220 20% 96%;
+    --foreground: 220 25% 15%;
+
+    --card: 220 20% 100%;
+    --card-foreground: 220 25% 15%;
+
+    --popover: 220 20% 100%;
+    --popover-foreground: 220 25% 15%;
+
+    --primary: 43 96% 50%;
+    --primary-foreground: 220 25% 10%;
+
+    --secondary: 220 15% 90%;
+    --secondary-foreground: 220 25% 20%;
+
+    --muted: 220 15% 92%;
+    --muted-foreground: 220 15% 45%;
+
+    --accent: 43 96% 50%;
+    --accent-foreground: 220 25% 10%;
+
+    --destructive: 0 84% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 88%;
+    --input: 220 15% 92%;
+    --ring: 43 96% 50%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --success: 142 76% 40%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 220 25% 10%;
+    --info: 199 89% 45%;
+    --info-foreground: 0 0% 100%;
+    
+    /* Difficulty colors */
+    --easy: 142 76% 40%;
+    --medium: 43 96% 50%;
+    --hard: 0 84% 55%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(43 96% 50%) 0%, hsl(38 92% 45%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(220 20% 100%) 0%, hsl(220 20% 98%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(220 20% 98%) 0%, hsl(220 20% 94%) 100%);
+    
+    /* Shadows */
+    --shadow-card: 0 4px 24px -4px hsl(220 25% 15% / 0.08);
+    --shadow-glow: 0 0 40px -8px hsl(43 96% 50% / 0.25);
+  }
+
+  .dark {
+    --background: 220 25% 12%;
+    --foreground: 210 40% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'DM Sans', sans-serif;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-card/80 backdrop-blur-xl border border-border/50;
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+  
+  .glow {
+    box-shadow: var(--shadow-glow);
+  }
+}
